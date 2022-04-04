@@ -1,0 +1,335 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap");
+
+@import "config";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+// Mobile First Design
+
+body {
+  background-color: #f6ebf4;
+  font-family: Red Hat Mono, sans-serif;
+}
+
+header {
+  height: 100vh;
+
+  nav {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6ebf4;
+    padding-left: 25px;
+    z-index: 1;
+    box-shadow: 0px 0.5px grey;
+
+    .fa-brands:hover {
+      color: $light-color;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0 20px;
+      place-items: center;
+
+      li {
+        display: inline;
+        place-items: center;
+
+        a {
+          display: inline-block;
+          padding: 22px;
+          color: $tertiary-color;
+          place-items: center;
+
+          &:hover {
+            background-color: #050505;
+            color: $light-color;
+          }
+        }
+      }
+    }
+  }
+
+  //  Centering multiple lines of text in the hero element
+  .hero {
+    background-color: $tertiary-color;
+    height: 600px;
+    color: $quartenary-color;
+    display: grid;
+    place-items: center;
+    // opacity: 0.6;
+    // padding-top: 50px;
+
+    h1 {
+      text-align: center;
+      padding: 7px;
+      font-size: 3.2rem;
+      font-weight: bolder;
+    }
+
+    p {
+      text-align: center;
+      font-style: italic;
+      font-size: 2rem;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+i {
+  padding-right: 5px;
+}
+
+section {
+  // background-color: black;
+
+  h1 {
+    position: relative;
+    text-align: center;
+    color: $tertiary-color;
+    font-family: Roboto, "Times New Roman", Times, serif;
+    margin-top: 70px;
+    font-size: 2rem;
+    font-weight: bold;
+
+    // Horizontal line for h1 element
+    // h1:after
+    &:after {
+      content: "";
+      width: 330px;
+      height: 2px;
+      background: $light-color;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      margin: 0 auto;
+      margin-bottom: -7px;
+    }
+  }
+
+  .portfolio {
+    display: grid;
+    grid-gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    margin: 50px 0 45px 0;
+
+    img {
+      height: 275px;
+      width: 365px;
+    }
+    figure {
+      background-color: $tertiary-color;
+    }
+    figcaption {
+      text-align: center;
+      padding: 10px 10px 20px 10px;
+      color: $quartenary-color;
+
+      &:hover::before {
+        content: "<";
+        color: $light-color;
+        padding-right: 5px;
+      }
+      &:hover::after {
+        content: "/>";
+        color: $light-color;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .btn {
+    text-align: center;
+    transition: all 0.3s;
+
+    a {
+      background-color: $tertiary-color;
+      color: $quartenary-color;
+      padding: 10px 15px;
+      font-size: 18px;
+
+      &:hover {
+        background-color: $ash-color;
+        color: $light-color;
+
+        .fa-angle-right:hover {
+          &:hover {
+            transform: translateX(5px);
+            transition: all 0.3s;
+          }
+        }
+      }
+
+      // .fa-angle-right:hover {
+      //   transition: all 0.3s;
+      //   &:hover {
+      //     transform: translateX(5px);
+      //     transition: all 0.3s;
+      //   }
+      // }
+    }
+
+    i {
+      padding-left: 10px;
+      font-size: large;
+    }
+  }
+}
+
+footer {
+  margin-top: 60px;
+  background-color: $tertiary-color;
+  height: auto;
+  color: $quartenary-color;
+
+  // .first-footer {
+  //   padding-top: 100px;
+
+  //   .items {
+  //     display: grid;
+  //     place-items: center;
+  //   }
+
+  //   .footer-links {
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: center;
+  //     display: grid;
+
+  //     justify-content: center;
+  //     align-items: center;
+  //     // place-items: center;
+  //     // display: grid;
+  //     // grid-template-columns: repeat(2, 1fr);
+
+  //     li {
+  //       display: inline-block;
+  //       padding: 30px 10px 30px 15px;
+  //       // Amination
+  //       transition: all 0.3s;
+  //       &:hover {
+  //         transform: translateY(5px);
+  //         transition: all 0.3s;
+  //       }
+
+  //       a {
+  //         text-decoration: none;
+  //         color: $quartenary-color;
+
+  //         &:hover {
+  //           color: $light-color;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  .first-footer {
+    padding-top: 100px;
+    .items {
+      display: grid;
+      place-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      li {
+        display: inline-block;
+        padding: 30px 10px 30px 15px;
+        // Amination
+        transition: all 0.3s;
+        &:hover {
+          transform: translateY(5px);
+          transition: all 0.3s;
+        }
+
+        a {
+          text-decoration: none;
+          color: $quartenary-color;
+
+          &:hover {
+            color: $light-color;
+          }
+        }
+      }
+    }
+  }
+
+  hr {
+    margin: 10px 0;
+  }
+
+  .second-footer-items {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 40px 20px;
+    margin: 0 50px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.portfolio {
+  grid-area: portfolio;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+// .wrapper {
+//   display: grid;
+//   grid-template-columns: 1fr;
+//   grid-auto-rows: minmax(100px, auto);
+//   grid-gap: 30px;
+//   grid-template-areas:
+//     "header"
+//     "main"
+//     "footer";
+// }
+
+// Mobile View
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+@import "mediaqueries";
